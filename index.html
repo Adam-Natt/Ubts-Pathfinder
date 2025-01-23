@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pathfinder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+    <div class="control-bar-container">
+      </br>
+
+      <div class="body-container">
+
+        <div class="driver-amount-container">
+          <label for="driver-amount">Driver Amount</label>
+          <input type="number" class="driver-amount" id="driver-amount" name="driver-amount" placeholder="1,2,3..." required>
+          <button class="create-driver-amount-btn" type="submit" onclick="userCreateDriver()">Create</button>
+        </div>
+
+        <div class="job-amount-container">
+          <label for="job-amount">Add Job</label>
+          <button class="create-job-amount-btn" type="submit" onclick="userCreateJob()">+</button>
+        </div>
+
+        <form class="driver-form" id="driver-form">
+          <div id="driver-div" class="driver-div"></div>
+          <br>
+          <div id="job-div" class="job-div"></div>
+
+          <button class="search-workload-btn" type="submit" onclick="generateJob(this)">Search</button>
+        </form>
+
+        <div class="driver-and-work-container" id="driver-and-work-container">
+          <label>Work Distribution</label>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+    <script src="scripts/api.js"></script>
+    <script src="scripts/draw.js"></script>
+    <script src="scripts/drawJob.js"></script>
+    <script src="scripts/helper.js"></script>
+    <script src="scripts/distribution.js"></script>
+    <script src="scripts/algorithm.js"></script>
+    <script src="scripts/map.js"></script>
+  </body>
+</html>
